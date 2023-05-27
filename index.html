@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <header>Node.js Documentation</header>
+    <a href="#Introduction_to_NodeJS" class="nav-link">Introduction to NodeJS</a>
+    <a href="#Installing_NodeJS" class="nav-link">Installing NodeJS</a>
+    <a href="#Creating_a_NodeJS_Project" class="nav-link">Creating a NodeJS Project</a>
+    <a href="#Using_Built-in_Modules_in_NodeJS" class="nav-link">Using Built-in Modules in NodeJS</a>
+    <a href="#Using_NPM_Packages_in_NodeJS" class="nav-link">Using NPM Packages in NodeJS</a>
+    <a href="#Asynchronous_Programming_in_NodeJS" class="nav-link">Asynchronous Programming in NodeJS</a>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction_to_NodeJS">
+      <header>Introduction to NodeJS</header>
+      <p>Node.js is a popular and powerful open-source, cross-platform, back-end JavaScript runtime environment.</p>
+      <p>Created in 2009 by Ryan Dahl, it has quickly gained popularity among developers for its ability to run JavaScript on the server-side.</p>
+      <p>Node.js is built on Chrome's V8 JavaScript engine, which provides a fast, efficient, and scalable platform for building web applications.</p>
+    </section>
+    <section class="main-section" id="Installing_NodeJS">
+      <header>Installing NodeJS</header>
+      <p>To install Node.js, go to the official website (https://nodejs.org/) and download the installer for your operating system.</p>
+      <p>Follow the installation instructions to complete the installation process.</p>
+      <p>Once installed, you can check the version of Node.js by running the following command in your terminal:</p>
+      <code>node -v</code>
+    </section>
+    <section class="main-section" id="Creating_a_NodeJS_Project">
+      <header>Creating a NodeJS Project</header>
+      <p>To create a new Node.js project, create a new directory and navigate into it using the terminal.</p>
+      <p>Once inside the directory, run the following command to initialize a new Node.js project:</p>
+      <code>npm init</code>
+      <p>Follow the prompts to set up the project, such as setting the project name, version, and description.</p>
+    </section>
+    <section class="main-section" id="Using_Built-in_Modules_in_NodeJS">
+      <header>Using Built-in Modules in NodeJS</header>
+      <p>Node.js provides a set of built-in modules that can be used to perform various tasks.</p>
+      <p>These modules can be accessed using the `require` function and can beused in your code to simplify development.</p>
+      <p>Here are some examples of built-in modules in Node.js:</p>
+      <li><span>fs module:</span> used to perform file system operations such as reading and writing files. Example code:</li>
+      <code>const fs = require('fs');
+        const data = fs.readFileSync('file.txt', 'utf-8');
+        console.log(data);
+      </code>
+      <li><span>http module:</span> used to create an HTTP server. Example code:</li>
+      <code>const http = require('http');
+        const server = http.createServer((req, res) => {
+          res.end('Hello, World!');
+        });
+        server.listen(3000, () => {
+          console.log('Server listening on port 3000');
+        });
+      </code>
+    <li><span>path module:</span> used to manipulate file paths. Example code:</li>
+    <code>const path = require('path');
+      const filePath = '/path/to/file.txt';
+      const fileName = path.basename(filePath);
+      console.log(fileName);
+    </code>
+    </section>
+    <section class="main-section" id="Using_NPM_Packages_in_NodeJS">
+      <header>Using NPM Packages in NodeJS</header>
+      <p>NPM (Node Package Manager) is the default package manager for Node.js.</p>
+      <p>NPM allows developers to easily install and manage third-party packages.</p>
+      <p>Here are some examples of popular NPM packages:</p>
+      <li><span>express:</span> a fast, minimalist web framework for Node.js. Example code:</li>
+      <code>const express = require('express');
+        const app = express();
+        app.get('/', (req, res) => {
+          res.send('Hello, World!');
+        });
+        app.listen(3000, () => {
+          console.log('Server listening on port 3000');
+        });
+      </code>
+      <li><span>moment:</span> a library for parsing, validating, manipulating, and formatting dates. Example code:</li>
+      <code>const moment = require('moment');
+        const now = moment();
+        console.log(now.format('MMMM Do YYYY, h:mm:ss a'));
+      </code>
+    </section>
+    <section class="main-section" id="Asynchronous_Programming_in_NodeJS">
+      <header>Asynchronous Programming in NodeJS</header>
+      <p>Node.js is designed to be asynchronous, meaning that it can handle multiple requests at the same time without blocking the main thread.</p>
+      <p>Asynchronous programming in Node.js is typically done using callbacks, promises, or async/await.</p>
+      <p>Here are some examples of asynchronous programming in Node.js:</p>
+      <li>Callbacks:</li>
+      <code>const fs = require('fs');
+        fs.readFile('file.txt', 'utf-8', (err, data) => {
+          if (err) {
+            console.error(err);
+          } else {
+            console.log(data);
+          }
+        });
+      </code>
+      <li>Promises:</li>
+      <code>const fs = require('fs').promises;
+        fs.readFile('file.txt', 'utf-8')
+          .then(data => {
+            console.log(data);
+          })
+          .catch(err => {
+            console.error(err);
+          });
+      </code>
+      <li>Async/await:</li>
+      <code>const fs = require('fs').promises;
+        async function readFile() {
+          try {
+            const data = await fs.readFile('file.txt', 'utf-8');
+            console.log(data);
+          } catch (err) {
+            console.error(err);
+          }
+        }
+        readFile();
+      </code>
+      <p>In summary, Node.js is a powerful and popular server-side platform for building web applications. It provides a set of built-in modules and a vast ecosystem of third-party packages through NPM. Asynchronous programming in Node.js is essential for handling multiple requests and can be done using callbacks, promises, or async/await. With its speed, scalability, and flexibility, Node.js is a valuable tool for developers of all levels.</p>
+    </section>
+  </main>
+</body>
+</html>
